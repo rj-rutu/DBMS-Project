@@ -1,8 +1,8 @@
 INSERT INTO Patient(email,password,name,address,gender)
 VALUES
-('rutuja@gmail.com','hrishikesh13','Rutuja','Tamil Nadu', 'female'),
-('sahil@gmail.com','hrishikesh13','Sahil','Karnataka', 'male'),
-('tanaya@gmail.com','hrishikesh13','Tanaya','Gujarat', 'female')
+('ramesh@gmail.com','password13','Ramesh','Tamil Nadu', 'male'),
+('sahil@gmail.com','password13','Sahil','Karnataka', 'male'),
+('tanaya@gmail.com','password13','Tanaya','Gujarat', 'female')
 ;
 
 INSERT INTO MedicalHistory(id,date,conditions,surgeries,medication)
@@ -14,8 +14,8 @@ VALUES
 
 INSERT INTO Doctor(email, gender, password, name)
 VALUES
-('priynaka7@gmail.com', 'female', 'hrishikesh13', 'Priyanka Manglulkar'),
-('priyanka8@gmail.com', 'female', 'hrishikesh13', 'Priyanka Manglulkar')
+('hathalye7@gmail.com', 'female', 'hrishikesh13', 'Priyanka Manglulkar'),
+('hathalye8@gmail.com', 'female', 'hrishikesh13', 'Priyanka Manglulkar')
 ;
 
 INSERT INTO Appointment(id,date,starttime,endtime,status)
@@ -27,7 +27,7 @@ VALUES
 
 INSERT INTO PatientsAttendAppointments(patient,appt,concerns,symptoms)
 VALUES
-('rutuja@gmail.com',1, 'none', 'itchy throat'),
+('ramesh@gmail.com',1, 'none', 'itchy throat'),
 ('sahil@gmail.com',2, 'infection', 'fever'),
 ('tanaya@gmail.com',3, 'nausea', 'fever')
 ;
@@ -44,27 +44,27 @@ VALUES
 
 INSERT INTO PatientsFillHistory(patient,history)
 VALUES
-('rutuja@gmail.com', 1),
+('ramesh@gmail.com', 1),
 ('sahil@gmail.com', 2),
 ('tanaya@gmail.com', 3)
 ;
 
 INSERT INTO Diagnose(appt,doctor,diagnosis,prescription)
 VALUES
-(1,'priyanka7@gmail.com', 'Bloating', 'Ibuprofen as needed'),
-(2,'priyanka8@gmail.com', 'Muscle soreness', 'Stretch morning/night'),
-(3,'priyanka8@gmail.com', 'Vitamin Deficiency', 'Good Diet')
+(1,'hathalye7@gmail.com', 'Bloating', 'Ibuprofen as needed'),
+(2,'hathalye8@gmail.com', 'Muscle soreness', 'Stretch morning/night'),
+(3,'hathalye8@gmail.com', 'Vitamin Deficiency', 'Good Diet')
 ;
 
 INSERT INTO DocsHaveSchedules(sched,doctor)
 VALUES
-(001,'priyanka7@gmail.com'),
-(002,'priyanka8@gmail.com')
+(001,'hathalye7@gmail.com'),
+(002,'hathalye8@gmail.com')
 ;
 
 INSERT INTO DoctorViewsHistory(history,doctor)
 VALUES
-(1,'priyanka7@gmail.com'),
-(2,'priyanka8@gmail.com'),
-(3,'priyanka8@gmail.com')
+(1,'hathalye7@gmail.com'),
+(2,'hathalye8@gmail.com'),
+(3,'hathalye8@gmail.com')
 ;
