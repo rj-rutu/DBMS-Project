@@ -8,6 +8,7 @@ name varchar(50) NOT NULL,
 address varchar(60) NOT NULL,
 gender VARCHAR(20) NOT NULL
 );
+select*table patient
 
 CREATE TABLE MedicalHistory(
 id int PRIMARY KEY,
@@ -16,6 +17,7 @@ conditions VARCHAR(100) NOT NULL,
 surgeries VARCHAR(100) NOT NULL, 
 medication VARCHAR(100) NOT NULL
 );
+select*table medicalhistory
 
 CREATE TABLE Doctor(
 email varchar(50) PRIMARY KEY,
@@ -23,6 +25,7 @@ gender varchar(20) NOT NULL,
 password varchar(30) NOT NULL,
 name varchar(50) NOT NULL
 );
+select*table doctor
 
 CREATE TABLE Appointment(
 id int PRIMARY KEY,
@@ -31,6 +34,7 @@ starttime TIME NOT NULL,
 endtime TIME NOT NULL,
 status varchar(15) NOT NULL
 );
+select*table appointment
 
 CREATE TABLE PatientsAttendAppointments(
 patient varchar(50) NOT NULL,
@@ -41,6 +45,7 @@ FOREIGN KEY (patient) REFERENCES Patient (email) ON DELETE CASCADE,
 FOREIGN KEY (appt) REFERENCES Appointment (id) ON DELETE CASCADE,
 PRIMARY KEY (patient, appt)
 );
+select*table patientsattendappointments
 
 CREATE TABLE Schedule(
 id int NOT NULL,
@@ -50,6 +55,7 @@ breaktime TIME NOT NULL,
 day varchar(20) NOT NULL,
 PRIMARY KEY (id, starttime, endtime, breaktime, day)
 );
+select*table schedule
 
 CREATE TABLE PatientsFillHistory(
 patient varchar(50) NOT NULL,
@@ -58,6 +64,7 @@ FOREIGN KEY (patient) REFERENCES Patient (email) ON DELETE CASCADE,
 FOREIGN KEY (history) REFERENCES MedicalHistory (id) ON DELETE CASCADE,
 PRIMARY KEY (history)
 );
+select*table patientsfillhistory
 
 CREATE TABLE Diagnose(
 appt int NOT NULL,
@@ -68,6 +75,7 @@ FOREIGN KEY (appt) REFERENCES Appointment (id) ON DELETE CASCADE,
 FOREIGN KEY (doctor) REFERENCES Doctor (email) ON DELETE CASCADE,
 PRIMARY KEY (appt, doctor)
 );
+select*table diagnose
 
 CREATE TABLE DocsHaveSchedules(
 sched int NOT NULL,
@@ -76,6 +84,7 @@ FOREIGN KEY (sched) REFERENCES Schedule (id) ON DELETE CASCADE,
 FOREIGN KEY (doctor) REFERENCES Doctor (email) ON DELETE CASCADE,
 PRIMARY KEY (sched, doctor)
 );
+select*table docshaveschedules
 
 CREATE TABLE DoctorViewsHistory(
 history int NOT NULL,
@@ -84,3 +93,4 @@ FOREIGN KEY (doctor) REFERENCES Doctor (email) ON DELETE CASCADE,
 FOREIGN KEY (history) REFERENCES MedicalHistory (id) ON DELETE CASCADE,
 PRIMARY KEY (history, doctor)
 );
+select*table doctorviewshistory
